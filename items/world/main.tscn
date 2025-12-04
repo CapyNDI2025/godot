@@ -1,11 +1,12 @@
-[gd_scene load_steps=19 format=4 uid="uid://bkbth5ka44xwd"]
+[gd_scene load_steps=18 format=4 uid="uid://bkbth5ka44xwd"]
 
 [ext_resource type="PackedScene" uid="uid://ccxhlurjvpff4" path="res://items/laptop/laptop.tscn" id="1_sgyej"]
 [ext_resource type="PackedScene" uid="uid://3lqquimcyp7l" path="res://items/world/phone.tscn" id="2_xjd3p"]
-[ext_resource type="Script" uid="uid://cflx8sv4lv627" path="res://items/world/spawner.gd" id="3_5w60r"]
+[ext_resource type="Script" path="res://items/world/spawner.gd" id="3_5w60r"]
+[ext_resource type="Script" path="res://items/world/animation_player.gd" id="5_urlm7"]
 [ext_resource type="PackedScene" uid="uid://c0y8kpguh5ee2" path="res://items/tree/tree.tscn" id="6_1q211"]
+[ext_resource type="Script" uid="uid://dwc4fq06l6lmx" path="res://items/world/button.gd" id="7_et2dg"]
 [ext_resource type="PackedScene" uid="uid://cpy8i1wk22y40" path="res://salle classe.tscn" id="7_ks7hr"]
-[ext_resource type="Shader" path="res://items/world/main.gdshader" id="7_urlm7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -302,6 +303,26 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14,
 libraries = {
 &"": SubResource("AnimationLibrary_et2dg")
 }
+script = ExtResource("5_urlm7")
 
 [node name="Node3D" parent="." instance=ExtResource("7_ks7hr")]
 transform = Transform3D(-0.9999974, 0, -0.0023386367, 0, 1, 0, 0.0023386367, 0, -0.9999974, 0, 0, 3.9767313)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -45.0
+offset_right = 5.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "bouton"
+script = ExtResource("7_et2dg")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
