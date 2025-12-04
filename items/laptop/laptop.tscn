@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccxhlurjvpff4"]
+
+[ext_resource type="ArrayMesh" uid="uid://beuu45x0psw1s" path="res://items/laptop/Laptop.obj" id="1_krjbm"]
+[ext_resource type="Texture2D" uid="uid://bi1pljfllwhk7" path="res://items/laptop/Texture.png" id="2_rc7c3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gako"]
+albedo_texture = ExtResource("2_rc7c3")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rc7c3"]
+points = PackedVector3Array(-3.8603175, 1.4227417, -2.4602468, 3.8603175, 6.72912, -2.0984125, 3.8603175, 6.72912, -2.4602468, -3.8603175, 6.72912, -2.0984125, 3.8603175, 1.4227417, -2.0984125, 3.8603175, 1.4227417, -2.4602468, -3.8603175, 6.72912, -2.4602468, -3.8603175, 1.4227417, -2.0984125)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2gako"]
+points = PackedVector3Array(3.8603175, 1.3015047, 2.968254, -3.8603175, 0.9396826, -2.4603176, -3.7745323, 1.416814, -2.3999999, 3.8603175, 0.9396826, -2.4603176, -3.8603175, 0.9396826, 2.968254, 3.7745323, 1.416814, -2.3999999, 3.8603175, 0.9396826, 2.968254, -3.8603175, 1.3015047, 2.968254, -3.8603175, 1.422175, -2.0973854, 3.8603175, 1.422175, -2.0973854)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+
+[node name="Laptop" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1, 0, 20)
+mesh = ExtResource("1_krjbm")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2gako")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1, 0, 20)
+shape = SubResource("ConvexPolygonShape3D_rc7c3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1, 0, 20)
+shape = SubResource("ConvexPolygonShape3D_2gako")
