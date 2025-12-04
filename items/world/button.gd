@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	Eventbus.next_camera_step.emit()
-	disabled = true
+	#disabled = true
 	
 func __on_step_over():
 	disabled = false
