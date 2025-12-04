@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bkbth5ka44xwd"]
+[gd_scene load_steps=29 format=4 uid="uid://bkbth5ka44xwd"]
 
 [ext_resource type="PackedScene" uid="uid://ccxhlurjvpff4" path="res://items/laptop/laptop.tscn" id="1_sgyej"]
 [ext_resource type="PackedScene" uid="uid://3lqquimcyp7l" path="res://items/world/phone.tscn" id="2_xjd3p"]
@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://c0y8kpguh5ee2" path="res://items/tree/tree.tscn" id="6_1q211"]
 [ext_resource type="Script" uid="uid://dwc4fq06l6lmx" path="res://items/world/button.gd" id="7_et2dg"]
 [ext_resource type="PackedScene" uid="uid://cpy8i1wk22y40" path="res://salle classe.tscn" id="7_ks7hr"]
-[ext_resource type="PackedScene" uid="uid://b1gnpg1nsda11" path="res://items/decors/antique_l.m._ericsson_phone.glb" id="8_bjo5o"]
-[ext_resource type="PackedScene" uid="uid://khop5hra74sp" path="res://items/decors/soviet_retro_tv.glb" id="9_s3nkk"]
-[ext_resource type="PackedScene" uid="uid://ugcfaed5e4xn" path="res://items/decors/realistic_smartphone_3d_model.glb" id="10_56ek6"]
+[ext_resource type="Texture2D" uid="uid://c3ilqqfh13yof" path="res://items/decors/french_classroom_28.png" id="8_56ek6"]
+[ext_resource type="Texture2D" uid="uid://bp28vlv2w5r5o" path="res://items/decors/french_classroom_29.png" id="9_av554"]
+[ext_resource type="Texture2D" uid="uid://bvyufsb2ntuif" path="res://items/decors/french_classroom_30.png" id="10_0addg"]
+[ext_resource type="Texture2D" uid="uid://50rf67ekwahf" path="res://items/decors/french_classroom_35.png" id="11_mxco8"]
+[ext_resource type="Texture2D" uid="uid://bxujoe43ytd0" path="res://items/decors/french_classroom_36.png" id="12_t4ulv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -89,6 +91,91 @@ _data = {
 &"new_animation": SubResource("Animation_urlm7")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8x85b"]
+resource_name = "ground"
+albedo_texture = ExtResource("8_56ek6")
+metallic_texture = ExtResource("9_av554")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("9_av554")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("10_0addg")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4xi8w"]
+_surfaces = [{
+"aabb": AABB(-4.0200005, -5.0170007, 0, 8.040001, 10.034001, 1e-05),
+"format": 34360258561,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "ground",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("2KOAwEWLoMAAAAAA2KOAQEWLoEAAAAAA2KOAQEWLoMAAAAAA2KOAwEWLoEAAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i5xmj"]
+resource_name = "Sketchfab_Scene_Object_44"
+_surfaces = [{
+"aabb": AABB(-4.0200005, -5.0170007, 0, 8.040001, 10.034001, 1e-05),
+"attribute_data": PackedByteArray("k3yOwP7Pi0CTfI7A/s+LQJN8jsD+z4tAk3yOwP7Pi0CTfI7A/s+LQJN8jsD+z4tAk3yuQE5XZMCTfK5ATldkwJN8rkBOV2TAk3yuQE5XZMCTfK5ATldkwJN8rkBOV2TAk3yOwEhXZMCTfI7ASFdkwJN8jsBIV2TAk3yOwEhXZMCTfI7ASFdkwJN8jsBIV2TAk3yuQP7Pi0CTfK5A/s+LQJN8rkD+z4tAk3yuQP7Pi0CTfK5A/s+LQJN8rkD+z4tA"),
+"format": 34360258807,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_8x85b"),
+"name": "ground",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("2KOAwEWLoMAAAAAA2KOAQEWLoEAAAAAA2KOAQEWLoMAAAAAA2KOAwEWLoEAAAAAA/3//f/9/////f/9//3////9//3//f////3//f/9///8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4xi8w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhx45"]
+resource_name = "wallConcrete"
+cull_mode = 2
+albedo_texture = ExtResource("11_mxco8")
+metallic_texture = ExtResource("12_t4ulv")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("12_t4ulv")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_oa74g"]
+_surfaces = [{
+"aabb": AABB(-4.0200005, -5.0170007, 0, 8.040001, 10.034001, 3.4),
+"format": 34896670721,
+"index_count": 66,
+"index_data": PackedByteArray("AAABAAIAAAAEAAEABAAFAAEADAAAAAIABAANAAUADAACAAMADQADAAUADQAMAAMACgANAAQADgAAAAwADwAMAA0ACgAPAA0ADwAOAAwADgAHAAAACwAPAAoACwAIAA8ACAAOAA8ACQALAAoACQAKAAcACAAGAA4ABgAJAAcABgAHAA4A"),
+"lods": [1e-10, PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEABAAFAAEABgAAAAMABgAHAAAACAAGAAMACAADAAUABgAJAAcACgAFAAQACgAIAAUACQAKAAcACwAIAAoACQALAAoA")],
+"name": "wallConcrete",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("//8AAOriAAD///////8AAP//AAD//wAAAAAAAP//AAD/////6uIAAAAA/////wAAAAAAAAAAAAD//wAAPUoAAAAA//8AAAAA//8AAAAAAAD/////PUoAAP////8AAAAAAAAAAOriAAAAAP//6uIAAAAAAAA9SgAAAAD//z1KAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_im0dy"]
+resource_name = "Sketchfab_Scene_Object_57"
+_surfaces = [{
+"aabb": AABB(-4.0200005, -5.0170007, 0, 8.040001, 10.034001, 3.4),
+"attribute_data": PackedByteArray("JrRADSa0QA3rgXBAO4wKweuBcEA7jArB+rnVnfq51Z2CsYVA8xgQQIKxhUDzGBBA+rlADfq5QA2CsYVAO4wKwYKxhUA7jArBJrTVnSa01Z3rgXBA8xgQQOuBcEDzGBBAk4Zu+pOGbvpRuPI+8dMTQVG48j7x0xNBQA3//0AN//+iSwTBO4waQaJLBME7jBpBk4b//5OG//9RuPI+O4waQVG48j47jBpBk4Y23ZOGNt1RuPI+BRnhQFG48j4FGeFAQA0Bz0ANAc+iSwTB6sm+QKJLBMHqyb5Ak4YBz5OGAc9RuPI+6sm+QFG48j7qyb5A///////////ekhNBO4waQd6SE0E7jBpBq4Zu+quGbvplL/Y+9dMTQWUv9j710xNBq4b//6uG//9fL/Y+O4waQV8v9j47jBpB//8Bz///Ac/ekhNB7sm+QN6SE0Huyb5Aq4Y23auGNt18L/Y+BRnhQHwv9j4FGeFAq4YBz6uGAc+FL/Y+6sm+QIUv9j7qyb5Aq4ZADauGQA09L/Y+O4wKwT0v9j47jArBjJXVnYyV1Z08yMY/7xgQQDzIxj/vGBBAjJVADYyVQA04yMY/O4wKwTjIxj87jArBq4bVnauG1Z1fL/Y+7BgQQF8v9j7sGBBAQA3qzkAN6s6iSwTBepK+QKJLBMF6kr5AqqTsnaqk7J1oGylA14cQQGgbKUDXhxBAQA3snUAN7J2iSwTB04cQQKJLBMHThxBAqqTqzqqk6s5oGylAepK+QGgbKUB6kr5AQA19o0ANfaOiSwTB8GgrQKJLBMHwaCtAqqR9o6qkfaNoGylA8GgrQGgbKUDwaCtAQA21wEANtcCiSwTBX0OcQKJLBMFfQ5xAqqS1wKqktcBoGylAX0OcQGgbKUBfQ5xAQA1u+kANbvqiSwTB9dMTQaJLBMH10xNBQA023UANNt2iSwTBBRnhQKJLBMEFGeFA//9u+v//bvrekhNB9dMTQd6SE0H10xNB//823f//Nt3ekhNBBRnhQN6SE0EFGeFA"),
+"format": 34896670839,
+"index_count": 66,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAGAAVABYAGAAZABUAGgAZABgAGgAbABkAFAAbABoAFAAXABsABAAFAAYABAAcAAUABwAcAAQABwAdABwACQAdAAcACQAIAB0AHgAMAAoAHgALAAwAHwALAB4AHwAOAAsADQAOAB8ADQAPAA4AEAARABIAEAATABEA"),
+"lods": [1e-10, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABwAFAAQABwAIAAUACQAIAAcACgALAAwADQALAAoADQAOAAsADQAPAA4AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
+"material": SubResource("StandardMaterial3D_fhx45"),
+"name": "wallConcrete",
+"primitive": 3,
+"uv_scale": Vector4(18.446712, 19.318472, 18.446712, 19.318472),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("//8AAOri/z//////////P///AAD///8//////+ri/z//////6uL/PwAA//////8//////////z//////PUr/PwAA//8AAP8//////wAA/z8AAAAA//8AAP//AADq4gAA//8AAP//AAAAAAAAAAAAAP//AAA9SgAA//8AAAAAAAD//wAAAAD/P/////89Sv8///8AAD1K/z//////AAD/PwAA//8AAKoqAAAAAP//qioAAP////+qKgAAAAAAAKoqAAD//+riqioAAAAA6uKqKgAA//89SqoqAAAAAD1KqioAAP//6uL/PwAA//89Sv8/AAAAAOriAAAAAAAAPUoAAP9/////f////3////9///8AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+//3//v/9//7//f////3/+//9/////f/7/qqpUVaqqVFWqqlRVqqpUVaqqVFWqqlRVqqpUVaqqVFUAAP9/AAD/f/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_oa74g")
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -112,22 +199,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.00013498962, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 11, 16.5)
 size = Vector3(6, 0, 15)
 
-[node name="CSGBox3D24" type="CSGBox3D" parent="wall"]
-transform = Transform3D(0.16065608, 0, 0, 0, -959.5086, 0, 0, 0, 0.042976376, 2.4659543, 0.06910229, 11.476782)
-size = Vector3(3.3500366, 0.001, 15)
-
-[node name="CSGBox3D25" type="CSGBox3D" parent="wall"]
-transform = Transform3D(0.16065608, 0, 0, 0, -959.5086, 0, 0, 0, 0.042976376, 2.4659543, 0.06910229, 14.476782)
-size = Vector3(3.3500366, 0.001, 15)
-
-[node name="CSGBox3D26" type="CSGBox3D" parent="wall"]
-transform = Transform3D(0.16065608, 0, 0, 0, -959.5086, 0, 0, 0, 0.042976376, 2.4659543, 0.06910229, 17.476782)
-size = Vector3(3.3500366, 0.001, 15)
-
-[node name="CSGBox3D27" type="CSGBox3D" parent="wall"]
-transform = Transform3D(0.16065608, 0, 0, 0, -959.5086, 0, 0, 0, 0.042976376, 2.4659543, 0.06910229, 20.476782)
-size = Vector3(3.3500366, 0.001, 15)
-
 [node name="CSGBox3D19" type="CSGBox3D" parent="wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 11, 8.5)
 size = Vector3(12, 0, 1)
@@ -141,17 +212,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -14.999001, 16)
 use_collision = true
 size = Vector3(20, 2, 16)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.499, 5.5, 16)
-use_collision = true
-size = Vector3(1, 11, 16)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009999275, -4.5, 16)
-size = Vector3(8, 9, 16)
-
 [node name="CSGBox3D23" type="CSGBox3D" parent="wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0035471916, 0.13658547, 21.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0035471916, 0.13658547, 11.858285)
 use_collision = true
 size = Vector3(2.1762085, 1.2403564, 1)
 
@@ -186,11 +248,6 @@ size = Vector3(0.001, 11, 16)
 [node name="CSGBox3D4" type="CSGBox3D" parent="wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0019989014, 5.5004997, -8)
 size = Vector3(16, 11, 0)
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5019989, -2.4995003, 25)
-use_collision = true
-size = Vector3(19, 27, 2)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 11, 0)
@@ -236,14 +293,8 @@ operation = 2
 use_collision = true
 size = Vector3(7, 17, 18)
 
-[node name="phone" parent="." instance=ExtResource("2_xjd3p")]
-transform = Transform3D(-0.9887564, 0, 0.14953527, 0, 1, 0, -0.14953527, 0, -0.9887564, -0.6222198, 0.911188, 21.43243)
-
-[node name="phone2" parent="." instance=ExtResource("2_xjd3p")]
-transform = Transform3D(-0.045694165, 0, -0.9989555, 0, 1, 0, 0.9989555, 0, -0.045694165, 2.4614837, 0.71829915, 17.481663)
-
 [node name="RigidBody3D" parent="." instance=ExtResource("1_sgyej")]
-transform = Transform3D(-0.99871933, 0, -0.050592836, 0, 1, 0, 0.050592836, 0, -0.99871933, 0.25929922, 0.66167855, 21.465212)
+transform = Transform3D(-0.99871933, 0, -0.050592836, 0, 1, 0, 0.050592836, 0, -0.99871933, 0.25929922, 0.66167855, 11.823497)
 
 [node name="spawner" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 10, 20.226513)
@@ -294,13 +345,21 @@ grow_vertical = 0
 text = "bouton"
 script = ExtResource("7_et2dg")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("8_bjo5o")]
-transform = Transform3D(0.039887648, 0, -0.99920416, 0, 1, 0, 0.99920416, 0, 0.039887648, 2.393145, 0.5756066, 11.541971)
+[node name="ground_ground_0_268" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.014904587, 0.9998889, 0, -0.9998889, -0.014904587, 0, 0, 8.681004)
 
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("9_s3nkk")]
-transform = Transform3D(0.027398214, 0, -0.9996246, 0, 1, 0, 0.9996246, 0, 0.027398214, 2.494345, 0.5341386, 14.553701)
+[node name="Object_322" type="MeshInstance3D" parent="ground_ground_0_268"]
+mesh = SubResource("ArrayMesh_i5xmj")
+skeleton = NodePath("")
 
-[node name="Sketchfab_Scene3" parent="." instance=ExtResource("10_56ek6")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.399681, 0.85244, 20.463953)
+[node name="Object_370" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.3722303, 5.703814e-05, -1.9113608e-08, 0.0009371441, -0.00042735512, 5.922621, -0.013067401, 0.0059589976, 0.42474616, -1.24355, -0.052889347, 12.243068)
+mesh = SubResource("ArrayMesh_im0dy")
+skeleton = NodePath("")
+
+[node name="Object_371" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.028383506, -0.005694594, -0.37561944, 0.00071194716, -0.00036227345, 5.9086328, 0.82394725, 0.00019648166, 0.007833886, 4.1126533, -0.052889347, 12.243068)
+mesh = SubResource("ArrayMesh_im0dy")
+skeleton = NodePath("")
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
