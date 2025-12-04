@@ -79,15 +79,13 @@ shadow_mesh = SubResource("ArrayMesh_w46fn")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_37kgj"]
 points = PackedVector3Array(-6.7668767, -2.5649, 10.163012, 7.4409027, 2.8734407, 11.203507, 6.295729, 3.4460835, 15.782408, -7.4434376, 2.8734407, -17.41014, 6.764342, -2.5649, -15.849395, 6.2438083, -2.5649, 15.365493, -6.8708506, 2.8734407, 16.926237, 7.4409027, 2.8734407, -17.41014, -5.7244854, -2.5649, -16.892498, -5.2052765, -2.5649, 16.408596, -6.2968073, 3.4460835, 2.0457065, 6.8683157, 2.8734407, 16.926237, 6.295729, 2.8734407, -18.557552, -6.7668767, -2.5649, -15.849395, -5.7256775, 3.4460835, 16.926237, 6.295729, 3.4460835, 2.0457065, -7.4434376, 2.8734407, 11.203507, -6.2968073, 2.8734407, -18.557552, 6.764342, -2.5649, 10.163012, 5.723275, -2.5649, -16.892498, 5.2027416, -2.5649, 16.408596, -6.246343, -2.5649, 15.365493, 5.7231426, 3.4460835, 16.926237, -6.2968073, 3.4460835, 15.782408)
 
-[node name="PSX_MOBILE_000" type="Node3D"]
+[node name="RigidBody3D" type="RigidBody3D"]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="PSX_MOBILE" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="PSX_MOBILE" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_cmhq1")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_37kgj")

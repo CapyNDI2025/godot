@@ -15,15 +15,15 @@ points = PackedVector3Array(3.8603175, 1.3015047, 2.968254, -3.8603175, 0.939682
 [node name="RigidBody3D" type="RigidBody3D"]
 
 [node name="Laptop" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1, 0, 20)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = ExtResource("1_krjbm")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2gako")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1, 0, 20)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_rc7c3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1, 0, 20)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_2gako")
