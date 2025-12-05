@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bkbth5ka44xwd"]
+[gd_scene load_steps=41 format=4 uid="uid://bkbth5ka44xwd"]
 
 [ext_resource type="PackedScene" uid="uid://ccxhlurjvpff4" path="res://items/laptop/laptop.tscn" id="1_sgyej"]
 [ext_resource type="PackedScene" uid="uid://3lqquimcyp7l" path="res://items/world/phone.tscn" id="2_xjd3p"]
@@ -28,6 +28,7 @@ sky_material = SubResource("ProceduralSkyMaterial_a202f")
 
 [sub_resource type="Environment" id="Environment_a0tk4"]
 background_mode = 2
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_noarx")
 ambient_light_source = 3
 reflected_light_source = 2
@@ -35,6 +36,8 @@ tonemap_mode = 1
 glow_enabled = true
 fog_enabled = true
 volumetric_fog_enabled = true
+
+[sub_resource type="AudioStream" id="AudioStream_av554"]
 
 [sub_resource type="Animation" id="Animation_ks7hr"]
 length = 15.0
@@ -65,7 +68,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_urlm7"]
 resource_name = "new_animation"
-length = 30.0
+length = 35.0
+capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -73,10 +77,10 @@ tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.546967, 11.5, 22.50944),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.08454245, 1.7897549, 6.1752133), Vector3(0.3817419, 1.5464619, 7.4715896), Vector3(-0.08454245, 1.4819047, 7.868118), Vector3(-13.89753, 1.4278245, 9.395514)]
+"times": PackedFloat32Array(0, 5.546967, 11.5018, 22.50944, 35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 2,
+"values": [Vector3(-0.08454245, 1.7897549, 6.1752133), Vector3(0.3817419, 1.5464619, 7.4715896), Vector3(0.08201927, 1.4296803, 9.559688), Vector3(-13.89753, 1.4278245, 9.395514), Vector3(-17.154724, 1.4278245, 34.405888)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -85,10 +89,10 @@ tracks/1/path = NodePath("Camera3D:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.546967, 11.5, 22.50944),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 3.1415925, 0), Vector3(0, 2.0158553, 0)]
+"times": PackedFloat32Array(0, 5.546967, 11.5018, 22.50944, 35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 2,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -3.1415925, 0), Vector3(0, 2.0158553, 0), Vector3(0, 3.1285899, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_et2dg"]
@@ -263,8 +267,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0c0am")
 
-[sub_resource type="AudioStream" id="AudioStream_av554"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iclpc"]
 resource_name = "chair"
 albedo_texture = ExtResource("16_i5xmj")
@@ -317,6 +319,11 @@ environment = SubResource("Environment_a0tk4")
 transform = Transform3D(0.99713385, 0, -0.07565769, 0, 1, 0, 0.07565769, 0, 0.99713385, -0.08454245, 1.7897549, 1.1837883)
 current = true
 fov = 70.4
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08454245, -1.7897549, -6.1752133)
+stream = SubResource("AudioStream_av554")
+script = ExtResource("12_56ek6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 25, 13)
@@ -495,17 +502,17 @@ transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
-[node name="Object_378" type="MeshInstance3D" parent="."]
+[node name="Object_381" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.975974e-05, 1.3252908, 0.82351494, 0.00017877389, -0.0018548984, -21.189005, -0.6599449, 18.72366)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
-[node name="Object_379" type="MeshInstance3D" parent="."]
+[node name="Object_382" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.14340588, -0.005898965, 0.021525325, 0.0007437666, 9.975974e-05, 1.3252907, 0.8113055, 0.0010426051, -0.0050197877, -21.131535, -0.6599449, 23.454205)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
-[node name="Object_382" type="MeshInstance3D" parent="."]
+[node name="Object_383" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.14340588, -0.005898965, 0.021525325, 0.0007437666, 9.975974e-05, 1.3252907, 0.8113055, 0.0010426051, -0.0050197877, -19.868399, -0.6599449, 29.757624)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
@@ -520,37 +527,37 @@ transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
-[node name="Object_381" type="MeshInstance3D" parent="."]
+[node name="Object_384" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.975974e-05, 1.3252908, 0.82351494, 0.00017877389, -0.0018548984, -13.235755, 3.8450851, 15.516303)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
-[node name="Object_382" type="MeshInstance3D" parent="."]
+[node name="Object_386" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.975974e-05, 1.3252908, 0.82351494, 0.00017877389, -0.0018548984, -13.225942, 3.8595643, 15.51703)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
-[node name="Object_380" type="MeshInstance3D" parent="."]
+[node name="Object_387" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.975974e-05, 1.3252908, 0.82351494, 0.00017877389, -0.0018548984, -13.235755, -0.65994513, 20.889343)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
-[node name="Object_381" type="MeshInstance3D" parent="."]
+[node name="Object_388" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.1346603, -0.0059098215, 0.02196924, 0.0007437666, 9.975974e-05, 1.3252907, 0.81280285, -0.0009791957, 0.0024269852, -13.235755, -0.65994513, 24.679733)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
-[node name="Object_383" type="MeshInstance3D" parent="."]
+[node name="Object_389" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.1346603, -0.0059098215, 0.02196924, 0.0007437666, 9.975974e-05, 1.3252907, 0.81280285, -0.0009791957, 0.0024269852, -14.371317, -0.65994513, 31.020042)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
-[node name="Object_384" type="MeshInstance3D" parent="."]
+[node name="Object_390" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.21062371, -0.0057913093, 0.021642951, 0.00074376765, 9.975976e-05, 1.3252907, 0.79650456, -0.0015315183, 0.004485591, -15.628147, -0.63396084, 35.803646)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
-[node name="Object_386" type="MeshInstance3D" parent="."]
+[node name="Object_391" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.8236753, 0.00013432128, 0.0007015914, 0.0007437676, 9.9759774e-05, 1.3252908, -0.018461317, -0.005988887, 0.022091756, -15.628147, -0.63396084, 39.052536)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
@@ -573,19 +580,16 @@ transform = Transform3D(1, 0, 0, 0, 0.99911296, 0.04211978, 0, -0.04211978, 0.99
 mesh = SubResource("ArrayMesh_0eaqp")
 skeleton = NodePath("")
 
-[node name="chair_014|chair_L_chair_blend|Dupli|_chair_0_221" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9833, 0, 36.194275)
-
-[node name="Object_258" type="MeshInstance3D" parent="chair_014|chair_L_chair_blend|Dupli|_chair_0_221"]
-transform = Transform3D(1, 0, 0, 0, 0.0434102, 0.99905735, 0, -0.99905735, 0.0434102, 0.73124695, 0.030755043, 1.0721092)
-mesh = SubResource("ArrayMesh_buys8")
-skeleton = NodePath("")
-
-[node name="Object_367" type="MeshInstance3D" parent="teacherDesk_001|teacherDesk_L_teacherDesk_blend|Dupli|_teacherD_299"]
+[node name="Object_368" type="MeshInstance3D" parent="teacherDesk_001|teacherDesk_L_teacherDesk_blend|Dupli|_teacherD_299"]
 transform = Transform3D(1, 0, 0, 0, 0.99911296, 0.04211978, 0, -0.04211978, 0.99911296, -17.31663, -28.835165, 0.7187983)
 mesh = SubResource("ArrayMesh_0eaqp")
 skeleton = NodePath("")
 
+[node name="Object_369" type="MeshInstance3D" parent="teacherDesk_001|teacherDesk_L_teacherDesk_blend|Dupli|_teacherD_299"]
+transform = Transform3D(1, 0, 0, 0, 0.99911267, 0.042119782, 0, -0.042119782, 0.99911267, 0, -2.2244902, 0.05032216)
+mesh = SubResource("ArrayMesh_0eaqp")
+skeleton = NodePath("")
+
 [node name="chair_014|chair_L_chair_blend|Dupli|_chair_0_221" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9833, 0, 36.194275)
 
@@ -594,22 +598,21 @@ transform = Transform3D(1, 0, 0, 0, 0.0434102, 0.99905735, 0, -0.99905735, 0.043
 mesh = SubResource("ArrayMesh_buys8")
 skeleton = NodePath("")
 
-[node name="Object_367" type="MeshInstance3D" parent="teacherDesk_001|teacherDesk_L_teacherDesk_blend|Dupli|_teacherD_299"]
-transform = Transform3D(1, 0, 0, 0, 0.99911267, 0.042119782, 0, -0.042119782, 0.99911267, 0, -2.2244902, 0.05032216)
-mesh = SubResource("ArrayMesh_0eaqp")
+[node name="Object_259" type="MeshInstance3D" parent="chair_014|chair_L_chair_blend|Dupli|_chair_0_221"]
+transform = Transform3D(1, 0, 0, 0, 0.0434102, 0.99905735, 0, -0.99905735, 0.0434102, 0.73124695, 0.030755043, 1.0721092)
+mesh = SubResource("ArrayMesh_buys8")
 skeleton = NodePath("")
+
+[node name="chair_014|chair_L_chair_blend|Dupli|_chair_0_222" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9833, 0, 36.194275)
 
 [node name="teacherDesk_001|teacherDesk_L_teacherDesk_blend|Dupli|_teacherD_300" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.025112687, 0.99968463, 0, -0.99968463, 0.025112687, 0, 0, 9.410383)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = SubResource("AudioStream_av554")
-script = ExtResource("12_56ek6")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.68428, -0.57439095, 9.265531)
 use_collision = true
 size = Vector3(8.876251, 1, 11.108826)
 
+[connection signal="finished" from="Camera3D/AudioStreamPlayer3D" to="Camera3D/AudioStreamPlayer3D" method="_on_finished"]
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
-[connection signal="finished" from="AudioStreamPlayer3D" to="AudioStreamPlayer3D" method="_on_finished"]
