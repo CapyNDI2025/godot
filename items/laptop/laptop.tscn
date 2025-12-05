@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccxhlurjvpff4"]
+[gd_scene load_steps=9 format=3 uid="uid://ccxhlurjvpff4"]
 
 [ext_resource type="ArrayMesh" uid="uid://beuu45x0psw1s" path="res://items/laptop/Laptop.obj" id="1_krjbm"]
 [ext_resource type="Texture2D" uid="uid://bi1pljfllwhk7" path="res://items/laptop/Texture.png" id="2_rc7c3"]
+[ext_resource type="Texture2D" uid="uid://d2rx4yu6fi1wh" path="res://items/decors/Windows-10-logo-white.jpg" id="3_2gako"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gako"]
 albedo_texture = ExtResource("2_rc7c3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpbwu"]
+albedo_texture = ExtResource("3_2gako")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2jkyq"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rc7c3"]
 points = PackedVector3Array(-3.8603175, 1.4227417, -2.4602468, 3.8603175, 6.72912, -2.0984125, 3.8603175, 6.72912, -2.4602468, -3.8603175, 6.72912, -2.0984125, 3.8603175, 1.4227417, -2.0984125, 3.8603175, 1.4227417, -2.4602468, -3.8603175, 6.72912, -2.4602468, -3.8603175, 1.4227417, -2.0984125)
@@ -19,6 +25,11 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = ExtResource("1_krjbm")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2gako")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Laptop"]
+transform = Transform3D(3.714504, 0, -1.1823105e-07, -1.6236612e-07, 1.8077477e-15, -2.704811, 0, 0.94612515, 5.168044e-15, -0.02466619, 3.911537, -2.1611938)
+material_override = SubResource("StandardMaterial3D_jpbwu")
+mesh = SubResource("PlaneMesh_2jkyq")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

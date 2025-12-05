@@ -1,23 +1,28 @@
-[gd_scene load_steps=41 format=4 uid="uid://bkbth5ka44xwd"]
+[gd_scene load_steps=50 format=4 uid="uid://bkbth5ka44xwd"]
 
 [ext_resource type="PackedScene" uid="uid://ccxhlurjvpff4" path="res://items/laptop/laptop.tscn" id="1_sgyej"]
 [ext_resource type="PackedScene" uid="uid://3lqquimcyp7l" path="res://items/world/phone.tscn" id="2_xjd3p"]
-[ext_resource type="Script" uid="uid://cflx8sv4lv627" path="res://items/world/spawner.gd" id="3_5w60r"]
+[ext_resource type="Script" path="res://items/world/spawner.gd" id="3_5w60r"]
 [ext_resource type="Script" uid="uid://btomeosksm7kq" path="res://items/world/animation_player.gd" id="5_urlm7"]
 [ext_resource type="Texture2D" uid="uid://d03wbvyo331gn" path="res://items/decors/french_classroom_9.png" id="6_mxco8"]
 [ext_resource type="Script" uid="uid://dwc4fq06l6lmx" path="res://items/world/button.gd" id="7_et2dg"]
-[ext_resource type="PackedScene" uid="uid://70txaregb7xx" path="res://salle classe.tscn" id="7_ks7hr"]
+[ext_resource type="PackedScene" uid="uid://cpy8i1wk22y40" path="res://salle classe.tscn" id="7_ks7hr"]
 [ext_resource type="Texture2D" uid="uid://s0gy61a5sm0w" path="res://items/decors/french_classroom_10.png" id="7_t4ulv"]
 [ext_resource type="Texture2D" uid="uid://c3ilqqfh13yof" path="res://items/decors/french_classroom_28.png" id="8_56ek6"]
 [ext_resource type="Texture2D" uid="uid://b8iquepo3spsh" path="res://items/decors/french_classroom_11.png" id="8_i5xmj"]
 [ext_resource type="Texture2D" uid="uid://bp28vlv2w5r5o" path="res://items/decors/french_classroom_29.png" id="9_av554"]
 [ext_resource type="Texture2D" uid="uid://bvyufsb2ntuif" path="res://items/decors/french_classroom_30.png" id="10_0addg"]
 [ext_resource type="Texture2D" uid="uid://50rf67ekwahf" path="res://items/decors/french_classroom_35.png" id="11_mxco8"]
-[ext_resource type="Script" uid="uid://ckqwhmhm5yakx" path="res://items/world/audio_stream_player_3d.gd" id="12_56ek6"]
+[ext_resource type="Script" path="res://items/world/audio_stream_player_3d.gd" id="12_56ek6"]
 [ext_resource type="Texture2D" uid="uid://bxujoe43ytd0" path="res://items/decors/french_classroom_36.png" id="12_t4ulv"]
 [ext_resource type="Texture2D" uid="uid://bfrm706dydqbm" path="res://items/decors/french_classroom_34.png" id="15_im0dy"]
 [ext_resource type="Texture2D" uid="uid://bktk0a7s0unhm" path="res://items/decors/french_classroom_12.png" id="16_i5xmj"]
 [ext_resource type="Texture2D" uid="uid://cm6shnrlpj2ym" path="res://items/decors/french_classroom_13.png" id="17_im0dy"]
+[ext_resource type="ArrayMesh" uid="uid://beuu45x0psw1s" path="res://items/laptop/Laptop.obj" id="19_0eaqp"]
+[ext_resource type="Texture2D" uid="uid://bi1pljfllwhk7" path="res://items/laptop/Texture.png" id="20_buys8"]
+[ext_resource type="Texture2D" uid="uid://d2rx4yu6fi1wh" path="res://items/decors/Windows-10-logo-white.jpg" id="21_buys8"]
+[ext_resource type="Texture2D" uid="uid://b0o8txua6v2ho" path="res://items/decors/0_Dovt23qTIKO6GvoB.jpg" id="22_ghegu"]
+[ext_resource type="PackedScene" uid="uid://bm46bl0iwub00" path="res://items/decors/low-poly_psx_pilot_flying_a_plane_animated.glb" id="23_11x3f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,12 +33,13 @@ sky_material = SubResource("ProceduralSkyMaterial_a202f")
 
 [sub_resource type="Environment" id="Environment_a0tk4"]
 background_mode = 2
-background_energy_multiplier = 0.0
+background_energy_multiplier = 0.5
 sky = SubResource("Sky_noarx")
 ambient_light_source = 3
 reflected_light_source = 2
-tonemap_mode = 1
+tonemap_mode = 3
 glow_enabled = true
+glow_bloom = 1.0
 fog_enabled = true
 volumetric_fog_enabled = true
 
@@ -68,7 +74,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_urlm7"]
 resource_name = "new_animation"
-length = 35.0
+length = 48.0
 capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -77,10 +83,10 @@ tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.546967, 11.5018, 22.50944, 35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 5.546967, 11.5018, 22.50944, 35, 40.469997),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 2,
-"values": [Vector3(-0.08454245, 1.7897549, 6.1752133), Vector3(0.3817419, 1.5464619, 7.4715896), Vector3(0.08201927, 1.4296803, 9.559688), Vector3(-13.89753, 1.4278245, 9.395514), Vector3(-17.154724, 1.4278245, 34.405888)]
+"values": [Vector3(-0.08454245, 1.7897549, 6.1752133), Vector3(0.3817419, 1.5464619, 7.4715896), Vector3(0.08201927, 1.4296803, 9.559688), Vector3(-13.89753, 1.4278245, 9.395514), Vector3(-17.154724, 1.4278245, 34.405888), Vector3(-17.154724, 1.7996373, 37.087368)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -89,10 +95,10 @@ tracks/1/path = NodePath("Camera3D:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.546967, 11.5018, 22.50944, 35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 5.546967, 11.5018, 22.50944, 35, 40.469997),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 2,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -3.1415925, 0), Vector3(0, 2.0158553, 0), Vector3(0, 3.1285899, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -3.1415925, 0), Vector3(0, 2.0158553, 0), Vector3(0, 3.1285899, 0), Vector3(-0.29046735, 3.1280212, 0.0038870445)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_et2dg"]
@@ -310,6 +316,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8k8pq")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqoy1"]
+albedo_texture = ExtResource("20_buys8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghegu"]
+albedo_texture = ExtResource("21_buys8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_11x3f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11x3f"]
+albedo_texture = ExtResource("22_ghegu")
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -337,12 +354,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.00013498962, 0)
 [node name="CSGBox3D19" type="CSGBox3D" parent="wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 11, 8.5)
 size = Vector3(12, 0, 1)
-
-[node name="RigidBody3D" parent="." instance=ExtResource("1_sgyej")]
-transform = Transform3D(-0.99871933, 0, -0.050592836, 0, 1, 0, 0.050592836, 0, -0.99871933, -0.0907827, 0.6785959, 11.625818)
-
-[node name="RigidBody3D2" parent="." instance=ExtResource("1_sgyej")]
-transform = Transform3D(-0.99871933, 0, -0.050592836, 0, 1, 0, 0.050592836, 0, -0.99871933, -17.259796, 0.6785959, 38.24488)
 
 [node name="spawner" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.040144, 6.524303, 12.25418)
@@ -613,6 +624,63 @@ transform = Transform3D(1, 0, 0, 0, 0.025112687, 0.99968463, 0, -0.99968463, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.68428, -0.57439095, 9.265531)
 use_collision = true
 size = Vector3(8.876251, 1, 11.108826)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.013854912, 0.5397115, -0.8417361, 0.008882407, 0.8418502, 0.53963846, 0.9998647, 2.328622e-10, -0.016457697, -3.669693, 1.8458278, 4.97607)
+light_energy = 16.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.01385491, 0.5397114, -0.84173614, 0.008882406, 0.8418501, 0.53963834, 0.9998646, -1.8623296e-09, -0.016457696, -3.669693, 1.8458278, 6.8038683)
+light_energy = 16.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.01385491, 0.5397114, -0.84173614, 0.008882406, 0.8418501, 0.53963834, 0.9998646, -1.8628974e-09, -0.016457694, -3.669693, 1.8458278, 2.8492115)
+light_energy = 16.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(0.9851801, -0.0095060505, -0.17125988, -0.0010072989, 0.9981252, -0.061197054, 0.17152053, 0.060462624, 0.9833235, -0.10999262, 1.0784651, 11.75136)
+light_energy = 7.643
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SpotLight3D5"]
+transform = Transform3D(1, 0, 1.4901161e-08, 0, 1, -3.7252903e-09, -1.4901161e-08, 0, 1, -0.051935792, -0.018307924, -0.29774666)
+light_energy = 0.3
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.01385491, 0.5397114, -0.84173614, 0.008882406, 0.8418501, 0.53963834, 0.9998646, -1.8628974e-09, -0.016457694, -3.669693, 1.8458278, 0.7834375)
+light_energy = 16.0
+
+[node name="Laptop" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.099999964, 0, 8.3771534e-05, 0, 0.1, 0, -8.3771534e-05, 0, -0.099999964, 0, 0.7107644, 11.521781)
+mesh = ExtResource("19_0eaqp")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_cqoy1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Laptop"]
+transform = Transform3D(3.714504, 0, -1.1823105e-07, -1.6236612e-07, 1.8077477e-15, -2.704811, 0, 0.94612515, 5.168044e-15, -0.02466619, 3.911537, -2.1611938)
+material_override = SubResource("StandardMaterial3D_ghegu")
+mesh = SubResource("PlaneMesh_11x3f")
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="."]
+transform = Transform3D(0.9851801, -0.0095060505, -0.17125988, -0.0010072989, 0.9981252, -0.061197054, 0.17152053, 0.060462624, 0.9833235, -17.438532, 1.0784651, 38.396935)
+light_energy = 7.643
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SpotLight3D6"]
+transform = Transform3D(1, 0, 1.4901161e-08, 0, 1, -3.7252903e-09, -1.4901161e-08, 0, 1, -0.051935792, -0.018307924, -0.29774666)
+light_energy = 0.3
+
+[node name="Laptop2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.099999964, 0, 8.3771534e-05, 0, 0.1, 0, -8.3771534e-05, 0, -0.099999964, -17.328539, 0.7107644, 38.16736)
+mesh = ExtResource("19_0eaqp")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_cqoy1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Laptop2"]
+transform = Transform3D(3.714504, 0, -1.1823105e-07, -1.6236612e-07, 1.8077477e-15, -2.704811, 0, 0.94612515, 5.168044e-15, -0.02466619, 3.911537, -2.1611938)
+material_override = SubResource("StandardMaterial3D_11x3f")
+mesh = SubResource("PlaneMesh_11x3f")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("23_11x3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.223196, 0.12005803, 37.098927)
 
 [connection signal="finished" from="Camera3D/AudioStreamPlayer3D" to="Camera3D/AudioStreamPlayer3D" method="_on_finished"]
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
