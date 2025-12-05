@@ -1,12 +1,12 @@
-[gd_scene load_steps=34 format=4 uid="uid://bkbth5ka44xwd"]
+[gd_scene load_steps=36 format=4 uid="uid://bkbth5ka44xwd"]
 
 [ext_resource type="PackedScene" uid="uid://ccxhlurjvpff4" path="res://items/laptop/laptop.tscn" id="1_sgyej"]
 [ext_resource type="PackedScene" uid="uid://3lqquimcyp7l" path="res://items/world/phone.tscn" id="2_xjd3p"]
-[ext_resource type="Script" path="res://items/world/spawner.gd" id="3_5w60r"]
+[ext_resource type="Script" uid="uid://cflx8sv4lv627" path="res://items/world/spawner.gd" id="3_5w60r"]
 [ext_resource type="Script" uid="uid://btomeosksm7kq" path="res://items/world/animation_player.gd" id="5_urlm7"]
 [ext_resource type="Texture2D" uid="uid://d03wbvyo331gn" path="res://items/decors/french_classroom_9.png" id="6_mxco8"]
 [ext_resource type="Script" uid="uid://dwc4fq06l6lmx" path="res://items/world/button.gd" id="7_et2dg"]
-[ext_resource type="PackedScene" uid="uid://cpy8i1wk22y40" path="res://salle classe.tscn" id="7_ks7hr"]
+[ext_resource type="PackedScene" uid="uid://70txaregb7xx" path="res://salle classe.tscn" id="7_ks7hr"]
 [ext_resource type="Texture2D" uid="uid://s0gy61a5sm0w" path="res://items/decors/french_classroom_10.png" id="7_t4ulv"]
 [ext_resource type="Texture2D" uid="uid://c3ilqqfh13yof" path="res://items/decors/french_classroom_28.png" id="8_56ek6"]
 [ext_resource type="Texture2D" uid="uid://b8iquepo3spsh" path="res://items/decors/french_classroom_11.png" id="8_i5xmj"]
@@ -43,10 +43,10 @@ tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2.6919105, 6.852136),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.08454245, 1.7897549, 1.1837883), Vector3(-0.08454245, 2.3566537, 19.352627)]
+"values": [Vector3(-0.08454245, 1.7897549, 1.1837883), Vector3(0.48220092, 1.7897549, 8.290286), Vector3(-13.269563, 1.1070622, 9.669468)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -55,10 +55,10 @@ tracks/1/path = NodePath("Camera3D:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2.6919105, 6.852136),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.075730056, 0), Vector3(-0.6811318, -3.1208558, -0.013058547)]
+"values": [Vector3(0, -0.075730056, 0), Vector3(0, -3.1415925, 0), Vector3(0, 1.8291053, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_urlm7"]
@@ -71,10 +71,10 @@ tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 10.088061, 15, 17.942337),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 5.546967, 11.5, 22.50944),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.39463282, 1.7897549, 2.8146672), Vector3(0.14476067, 1.5549717, 1.1011258), Vector3(0.14476067, 1.5549717, 10.785099), Vector3(-1.4988403, 1.8537922, 14.923502), Vector3(0.5662656, 1.8537922, 16.874569)]
+"values": [Vector3(-0.08454245, 1.7897549, 6.1752133), Vector3(0.3817419, 1.5464619, 7.4715896), Vector3(-0.08454245, 1.4819047, 7.868118), Vector3(-13.89753, 1.4278245, 9.395514)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -83,10 +83,10 @@ tracks/1/path = NodePath("Camera3D:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3, 10.088061, 15, 17.942337),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 5.546967, 11.5, 22.50944),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.075730056, 0), Vector3(0, 0.12259175, 0), Vector3(0, 0.028047252, 0), Vector3(0, -1.5720705, 0), Vector3(0, -3.1258674, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 3.1415925, 0), Vector3(0, 2.0158553, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_et2dg"]
@@ -224,8 +224,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oa74g")
 
-[sub_resource type="AudioStream" id="AudioStream_av554"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxj5g"]
 resource_name = "teacherDesk"
 albedo_texture = ExtResource("15_im0dy")
@@ -263,6 +261,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0c0am")
 
+[sub_resource type="AudioStream" id="AudioStream_av554"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -287,25 +287,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 11, 8.5)
 size = Vector3(12, 0, 1)
 
 [node name="RigidBody3D" parent="." instance=ExtResource("1_sgyej")]
-transform = Transform3D(-0.99871933, 0, -0.050592836, 0, 1, 0, 0.050592836, 0, -0.99871933, 0.25929922, 0.6785959, 11.625818)
+transform = Transform3D(-0.99871933, 0, -0.050592836, 0, 1, 0, 0.050592836, 0, -0.99871933, -0.0907827, 0.6785959, 11.625818)
 
 [node name="spawner" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10, 11.340496)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.040144, 6.524303, 12.25418)
 script = ExtResource("3_5w60r")
 scene_to_spawn = ExtResource("1_sgyej")
 
 [node name="spawner2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10, 10.113983)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.040144, 6.524303, 11.027667)
 script = ExtResource("3_5w60r")
 scene_to_spawn = ExtResource("1_sgyej")
 
 [node name="spawner4" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10, 9.713112)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.040144, 6.524303, 10.626796)
 script = ExtResource("3_5w60r")
 scene_to_spawn = ExtResource("1_sgyej")
 
 [node name="spawner3" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10, 10.654932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.040144, 6.524303, 11.568616)
 script = ExtResource("3_5w60r")
 scene_to_spawn = ExtResource("2_xjd3p")
 
@@ -378,27 +378,52 @@ mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
 [node name="Object_372" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.82388234, 2.8066568e-06, 0.0011864275, 0.0007437668, 9.975972e-05, 1.3252909, -0.00037360835, -0.005990394, 0.022071026, -6.745022, -0.79029953, 8.425241)
+transform = Transform3D(-0.82388234, 2.8066568e-06, 0.0011864275, 0.0007437668, 9.975972e-05, 1.3252909, -0.00037360835, -0.005990394, 0.022071026, -6.745022, -0.79029953, 7.927744)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
 [node name="Object_373" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.76505405, 0.0022230716, -0.007079176, 0.0007437668, 9.975972e-05, 1.3252909, -0.30573618, -0.0055626235, 0.020938553, -13.011759, -0.79029953, 7.0832806)
+transform = Transform3D(-0.76505405, 0.0022230716, -0.007079176, 0.0007437668, 9.975972e-05, 1.3252909, -0.30573618, -0.0055626235, 0.020938553, -13.011759, -0.79029953, 6.7465444)
+mesh = SubResource("ArrayMesh_im0dy")
+skeleton = NodePath("")
+
+[node name="Object_380" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.76505405, 0.0022230716, -0.007079176, 0.0007437668, 9.975972e-05, 1.3252909, -0.30573618, -0.0055626235, 0.020938553, -13.011759, 3.4538598, 7.0832806)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
 [node name="Object_375" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.64818203, -0.0036976994, 0.014565028, 0.0007437668, 9.9759745e-05, 1.325291, 0.5085689, -0.0047129444, 0.016625218, -18.700426, -0.6599449, 7.843251)
+transform = Transform3D(-0.64818203, -0.0036976994, 0.014565028, 0.0007437668, 9.9759745e-05, 1.325291, 0.5085689, -0.0047129444, 0.016625218, -18.700426, -0.6599449, 7.622901)
+mesh = SubResource("ArrayMesh_im0dy")
+skeleton = NodePath("")
+
+[node name="Object_379" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.64818203, -0.0036976994, 0.014565028, 0.0007437668, 9.9759745e-05, 1.325291, 0.5085689, -0.0047129444, 0.016625218, -18.700426, 3.3599682, 7.843251)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
 [node name="Object_376" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.975974e-05, 1.3252908, 0.82351494, 0.00017877389, -0.0018548984, -21.189005, -0.6599449, 13.107482)
+transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.975974e-05, 1.3252908, 0.82351494, 0.00017877389, -0.0018548984, -21.189005, -0.6599449, 13.002534)
+mesh = SubResource("ArrayMesh_im0dy")
+skeleton = NodePath("")
+
+[node name="Object_378" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.975974e-05, 1.3252908, 0.82351494, 0.00017877389, -0.0018548984, -21.189005, 3.266973, 13.107482)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
 [node name="Object_377" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.975974e-05, 1.3252908, 0.82351494, 0.00017877389, -0.0018548984, -13.235755, -0.65994513, 15.516303)
+mesh = SubResource("ArrayMesh_im0dy")
+skeleton = NodePath("")
+
+[node name="Object_381" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.975974e-05, 1.3252908, 0.82351494, 0.00017877389, -0.0018548984, -13.235755, 3.8450851, 15.516303)
+mesh = SubResource("ArrayMesh_im0dy")
+skeleton = NodePath("")
+
+[node name="Object_382" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.02459997, -0.0059877257, 0.022024922, 0.0007437668, 9.975974e-05, 1.3252908, 0.82351494, 0.00017877389, -0.0018548984, -13.225942, 3.8595643, 15.51703)
 mesh = SubResource("ArrayMesh_im0dy")
 skeleton = NodePath("")
 
@@ -415,17 +440,22 @@ transform = Transform3D(1, 0, 0, 0, 0.99911267, 0.042119782, 0, -0.042119782, 0.
 mesh = SubResource("ArrayMesh_0eaqp")
 skeleton = NodePath("")
 
-[node name="teacherDesk_001|teacherDesk_L_teacherDesk_blend|Dupli|_teacherD_299" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.025112687, 0.99968463, 0, -0.99968463, 0.025112687, 0, 0, 9.410383)
-
-[node name="Object_366" type="MeshInstance3D" parent="teacherDesk_001|teacherDesk_L_teacherDesk_blend|Dupli|_teacherD_299"]
+[node name="Object_367" type="MeshInstance3D" parent="teacherDesk_001|teacherDesk_L_teacherDesk_blend|Dupli|_teacherD_299"]
 transform = Transform3D(1, 0, 0, 0, 0.99911267, 0.042119782, 0, -0.042119782, 0.99911267, 0, -2.2244902, 0.05032216)
 mesh = SubResource("ArrayMesh_0eaqp")
 skeleton = NodePath("")
 
+[node name="teacherDesk_001|teacherDesk_L_teacherDesk_blend|Dupli|_teacherD_300" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.025112687, 0.99968463, 0, -0.99968463, 0.025112687, 0, 0, 9.410383)
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStream_av554")
 script = ExtResource("12_56ek6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.68428, -0.57439095, 9.265531)
+use_collision = true
+size = Vector3(8.876251, 1, 11.108826)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
 [connection signal="finished" from="AudioStreamPlayer3D" to="AudioStreamPlayer3D" method="_on_finished"]
