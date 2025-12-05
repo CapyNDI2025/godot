@@ -1,5 +1,4 @@
 extends AnimationPlayer
-
 var animation_keyframes = []
 var current_keyframe_index = 0
 var target_keyframe_time = 0.0
@@ -35,6 +34,9 @@ func _init_at_first_keyframe() -> void:
 	seek(animation_keyframes[0], true)
 	pause()
 	current_keyframe_index = 0
+	
+	# Envoie le signal pour le premier keyframe
+	Eventbus.play_step.emit(current_keyframe_index)
 
 func _on_next_camera_step() -> void:
 	if animation_keyframes.is_empty() or is_transitioning:
@@ -54,3 +56,6 @@ func _process(delta: float) -> void:
 			pause()
 			seek(target_keyframe_time, true)
 			is_transitioning = false
+			
+			# Envoie le signal avec l'index du keyframe atteint
+			Eventbus.play_step.emit(current_keyframe_index)
